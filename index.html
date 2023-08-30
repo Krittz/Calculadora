@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Cristian Calc</title>
+  </head>
+
+  <body>
+    <div class="calculadora">
+      <input type="text" name="tela" id="tela" />
+      <table>
+        <tr>
+          <td><button class="botao" onclick="clean()">AC</button></td>
+          <td><button class="botao" onclick="insert('^')">x²</button></td>
+          <td>
+            <button class="botao" onclick="srqt()">
+              <i class="ph ph-radical"></i>
+            </button>
+          </td>
+          <td>
+            <button class="botao" onclick="insert()">
+              <i class="ph ph-divide"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><button class="botao" onclick="insert('7')">7</button></td>
+          <td><button class="botao" onclick="insert('8')">8</button></td>
+          <td><button class="botao" onclick="insert('9')">9</button></td>
+          <td>
+            <button class="botao" onclick="insert()">
+              <i class="ph ph-x"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><button class="botao" onclick="insert('4')">4</button></td>
+          <td><button class="botao" onclick="insert('5')">5</button></td>
+          <td><button class="botao" onclick="insert('6')">6</button></td>
+          <td>
+            <button class="botao" onclick="insert()">
+              <i class="ph ph-minus"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><button class="botao" onclick="insert('1')">1</button></td>
+          <td><button class="botao" onclick="insert('2')">2</button></td>
+          <td><button class="botao" onclick="insert('2')">3</button></td>
+          <td>
+            <button class="botao" onclick="insert()">
+              <i class="ph ph-plus"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><button class="botao" onclick="insert('0')">0</button></td>
+          <td><button class="botao" onclick="insert('.')">.</button></td>
+          <td colspan="2">
+            <button
+              class="botao"
+              style="width: 120px"
+              onclick="insert()"
+              id="btnEquals"
+            >
+              <i class="ph ph-equals"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      const tela = document.querySelector('#tela')
+
+      function insert(valor) {
+        tela.value += valor
+      }
+      function clean() {
+        tela.value = ''
+      }
+      function srqt() {
+        let x = tela.value
+        tela.value = Math.sqrt(x)
+      }
+    </script>
+  </body>
+</html>
