@@ -37,7 +37,7 @@ body {
 .social a:hover {
   color: var(--violet);
 }
-main {
+section {
   width: 100%;
   min-height: 100vh;
   display: flex;
