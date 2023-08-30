@@ -22,50 +22,21 @@ body {
   background: var(--darViolet);
   position: relative;
 }
-nav {
+.social {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 20rem;
-  height: 30rem;
-  margin-left: 1rem;
+  left: 2rem;
+  top: 2rem;
 }
-#btnMenu {
-  cursor: pointer;
-  top: 1rem;
-  position: fixed;
-  background: none;
-  font-size: 4rem;
-  color: var(--softPink);
-  border: none;
-  outline: none;
-}
-#btnMenu:hover {
-  color: var(--violet);
-}
-
-.showOption {
-  display: none;
-  transition: 1s;
-}
-
-a {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 0.5rem;
+.social a {
+  font-size: 3rem;
+  padding: 1rem;
   color: var(--softPink);
   text-decoration: none;
-  font-size: 2rem;
-  padding: 1rem;
+  transition: 0.5s;
 }
-a:hover {
-  transition: 1s;
+.social a:hover {
   color: var(--violet);
 }
-
 main {
   width: 100%;
   min-height: 100vh;
