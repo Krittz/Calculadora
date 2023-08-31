@@ -110,19 +110,19 @@
       function mathematic() {
         switch (op) {
           case '*':
-            tela.value = value1 * tela.value
+            tela.value = value1 * parseFloat(tela.value)
             break
           case '/':
-            tela.value = value1 / tela.value
+            tela.value = value1 / parseFloat(tela.value)
             break
           case '+':
-            tela.value = value1 + tela.value
+            tela.value = parseFloat(tela.value) + parseFloat(value1)
             break
           case '-':
-            tela.value = value1 - tela.value
-
+            tela.value = parseFloat(value1) - parseFloat(tela.value)
+            break
           case '^':
-            tela.value = Math.pow(value1, tela.value)
+            tela.value = Math.pow(parseFloat(value1), parseFloat(tela.value))
             break
           default:
             clean()
