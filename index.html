@@ -25,14 +25,14 @@
         <table>
           <tr>
             <td><button class="botao" onclick="clean()">AC</button></td>
-            <td><button class="botao" onclick="insert('^')">x²</button></td>
+            <td><button class="botao" onclick="operator('^')">x²</button></td>
             <td>
               <button class="botao" onclick="srqt()">
                 <i class="ph ph-radical"></i>
               </button>
             </td>
             <td>
-              <button class="botao" onclick="insert()">
+              <button class="botao" onclick="operator('/')">
                 <i class="ph ph-divide"></i>
               </button>
             </td>
@@ -42,7 +42,7 @@
             <td><button class="botao" onclick="insert('8')">8</button></td>
             <td><button class="botao" onclick="insert('9')">9</button></td>
             <td>
-              <button class="botao" onclick="insert()">
+              <button class="botao" onclick="operator('*')">
                 <i class="ph ph-x"></i>
               </button>
             </td>
@@ -52,7 +52,7 @@
             <td><button class="botao" onclick="insert('5')">5</button></td>
             <td><button class="botao" onclick="insert('6')">6</button></td>
             <td>
-              <button class="botao" onclick="insert()">
+              <button class="botao" onclick="operator('-')">
                 <i class="ph ph-minus"></i>
               </button>
             </td>
@@ -62,7 +62,7 @@
             <td><button class="botao" onclick="insert('2')">2</button></td>
             <td><button class="botao" onclick="insert('2')">3</button></td>
             <td>
-              <button class="botao" onclick="insert()">
+              <button class="botao" onclick="operator('+')">
                 <i class="ph ph-plus"></i>
               </button>
             </td>
@@ -74,7 +74,7 @@
               <button
                 class="botao"
                 style="width: 120px"
-                onclick="insert()"
+                onclick="mathematic()"
                 id="btnEquals"
               >
                 <i class="ph ph-equals"></i>
@@ -87,6 +87,8 @@
     <script>
       const tela = document.querySelector('#tela')
       const menu = document.querySelector('#menu')
+      let value1
+      let op
       function insert(valor) {
         tela.value += valor
       }
@@ -99,6 +101,35 @@
       }
       function showMenu() {
         document.getElementById('menu').classList.toggle('showOption')
+      }
+      function operator(valor) {
+        value1 = tela.value
+        op = valor
+        clean()
+      }
+      function mathematic() {
+        switch (op) {
+          case '*':
+            tela.value = value1 + tela.value
+            break
+          case '/':
+            tela.value = value1 / tela.value
+            break
+          case '+':
+            tela.value = value1 + tela.value
+            break
+          case '-':
+            tela.value = value1 - tela.value
+
+          case '^':
+            tela.value = Math.pow(value1, tela.value)
+            break
+          default:
+            clean()
+            value1 = ''
+            op = ''
+            break
+        }
       }
     </script>
   </body>
